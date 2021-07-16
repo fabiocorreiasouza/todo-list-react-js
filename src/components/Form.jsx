@@ -6,20 +6,22 @@ import React from 'react';
  * a parent component.
  */
 class Form extends React.Component {
-    constructor() {
-        super();
-        this.state = {taskName : null};
+    constructor(props) {
+        super(props);
+        this.state = { taskName : undefined };
     }
 
     // Attaches the value from input field to state, when happen a change event.
     handleChange = (event) => {
-        this.setState( {taskName : event.target.value} );
+        this.setState({ taskName : event.target.value });
     }
 
     // When happen a form submit event, this function sends state data to a parent, by callback props.
     handleSubmit = (event) => {
         event.preventDefault();
-        // <callback props here>
+        // Sends callback props to App component.
+        this.props.addNewTask(this.state.taskName);
+        this.setState({ taskName : "" });
     }
 
     render() {
