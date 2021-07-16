@@ -19,9 +19,14 @@ class Form extends React.Component {
     // When happen a form submit event, this function sends state data to a parent, by callback props.
     handleSubmit = (event) => {
         event.preventDefault();
+        if (this.state.taskName && this.state.taskName != "") {
         // Sends callback props to App component.
         this.props.addNewTask(this.state.taskName);
         this.setState({ taskName : "" });
+        }
+        else {
+            alert("Please, add a valid task name :)");
+        }
     }
 
     render() {
