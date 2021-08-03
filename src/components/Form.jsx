@@ -25,22 +25,22 @@ class Form extends React.Component {
         this.setState({ taskName : "" });
         }
         else {
-            alert("Please, add a valid task name :)");
+            alert("Please, add a valid task name!");
         }
     }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} >
-                <input 
+            <form className="form" onSubmit={this.handleSubmit} >
+                <input
                     type="text" 
                     className="input-text"
                     onChange={this.handleChange}
                     value={this.state.taskName}
                 />
 
-                <button className="btn" type="submit" >
-                    Hi, i am button
+                <button className="btn" type="submit">
+                    +
                 </button>
 
             </form>

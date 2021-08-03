@@ -26,14 +26,9 @@ class App extends React.Component {
     }
 
     // Delete a task when happen a onclick event.
-    deleteTask = (idTask) => {
-        let respost = window.confirm("Want you delete this task?");
-        alert(respost);
-        if(respost) {
-            const filtredItems = this.state.items.filter(item => item.id != idTask);
-            this.setState({ items : filtredItems });
-        }
-        //alert(respost);
+    deleteTask = (idTask) => { 
+        const filtredItems = this.state.items.filter(item => item.id != idTask);
+        this.setState({ items : filtredItems });
     }
 
     render() {
@@ -44,12 +39,17 @@ class App extends React.Component {
 
         return (
             <div className="App">
-                <h1>Todo List</h1>
-                <Form addNewTask={this.addNewTaskName} />
-                
-                <ul>
-                    {formatedTasks}
-                </ul> 
+                <header className="header">
+                    <h1>todo</h1>
+                </header>
+
+                <div className="box">
+                    <Form addNewTask={this.addNewTaskName} />
+                    
+                    <ul className="list">
+                        {formatedTasks}
+                    </ul>
+                </div>
             </div>
         );
     }
