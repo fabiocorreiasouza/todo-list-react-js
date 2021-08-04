@@ -4,6 +4,8 @@ This is a simple Todolist App developed in React.js.
 
 >Status: developing
 
+![app print](./src/images/appImage.png)
+
 ## Obectives
 
 **Practice my knowledge of the react tool** and, with code with lots of comments, i want to try to help out others new dev.

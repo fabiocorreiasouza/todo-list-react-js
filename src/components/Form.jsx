@@ -37,6 +37,7 @@ class Form extends React.Component {
                     className="input-text"
                     onChange={this.handleChange}
                     value={this.state.taskName}
+                    placeholder="New task"
                 />
 
                 <button className="btn" type="submit">
